@@ -39,7 +39,7 @@ function Api.make_call(params, cb)
     end
   end
   id = params.id
-  local jsonPayload = string.format('{"message": "%s", "id": %d}', message, id)
+  local jsonPayload = string.format('{"message": "%s", "id": %s}', message, id)
 
   Api.job = job
     :new({
