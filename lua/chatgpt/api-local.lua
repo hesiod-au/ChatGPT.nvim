@@ -31,7 +31,7 @@ function Api.make_call(params, cb)
     if type(messages) == "string" then
         message = messages
     elseif type(messages) == "table" then
-        message = messages[#messages]
+        message = messages[#messages].content
     else
         local input = params.input
         local instruction = params.instruction
