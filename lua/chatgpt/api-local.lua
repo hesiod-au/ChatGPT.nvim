@@ -56,7 +56,7 @@ function Api.make_call(params, cb)
         "-X POST",
         "-H",
         "Content-Type: application/json",
-        "-d $", jsonPayload
+        "-d", jsonPayload
       },
       on_exit = vim.schedule_wrap(function(response, exit_code)
         Api.handle_response(response, exit_code, cb)
