@@ -40,6 +40,7 @@ function Api.make_call(params, cb)
   end
   message = string.gsub(message, '"','\\"')
   message = string.gsub(message, "'","\\'")
+  message = string.gsub(message, "\n","\\n")
 
   id = params.id
   if id == nil then
