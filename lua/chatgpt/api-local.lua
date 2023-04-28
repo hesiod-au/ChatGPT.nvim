@@ -40,9 +40,9 @@ function Api.make_call(params, cb)
   end
   id = params.id
   if id == nil then
-    id = "Null"
+    id = "0"
   end
-  local jsonPayload = string.format('{"message": "%s", "id": %s}', message, id)
+  local jsonPayload = string.format('{"message": "%s", "id": "%s"}', message, id)
 
   Api.job = job
     :new({
