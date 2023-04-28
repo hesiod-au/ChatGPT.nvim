@@ -39,6 +39,9 @@ function Api.make_call(params, cb)
     end
   end
   id = params.id
+  if id == nil then
+    id = "Null"
+  end
   local jsonPayload = string.format('{"message": "%s", "id": %s}', message, id)
 
   Api.job = job
