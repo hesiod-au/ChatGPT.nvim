@@ -4,6 +4,7 @@ local Utils = require("chatgpt.utils")
 local Spinner = require("chatgpt.spinner")
 local Session = require("chatgpt.flows.chat.session")
 local Tokens = require("chatgpt.flows.chat.tokens")
+local Api = require("chatgpt.api-local")
 
 local Chat = {}
 Chat.__index = Chat
@@ -11,6 +12,7 @@ Chat.__index = Chat
 QUESTION, ANSWER, SYSTEM = 1, 2, 3
 
 function Chat:new(bufnr, winid, on_loading)
+  Api.reset_conversation()
   self = setmetatable({}, Chat)
 
   self.session = Session.latest()

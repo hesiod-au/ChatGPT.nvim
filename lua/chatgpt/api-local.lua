@@ -97,6 +97,20 @@ Api.handle_response = vim.schedule_wrap(function(response, exit_code, cb)
   end
 end)
 
+function Api.reset_conversation()
+-- set custom url
+  local url = "http://localhost:5000/reset_conversation"
+  Api.job = job
+    :new({
+      command = "curl",
+      args = {
+        url,
+        "-X GET",
+      },
+    })
+    :start()
+end
+
 function Api.close()
   if Api.job then
     job:shutdown()
