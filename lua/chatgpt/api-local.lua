@@ -20,7 +20,7 @@ end
 
 function Api.make_call(params, cb)
 -- set custom url
-  local url = "http://127.0.0.1:5000/send_message"
+  local url = "http://localhost:5000/send_message"
   local message = ""
   local messages = {}
   local id = ""
