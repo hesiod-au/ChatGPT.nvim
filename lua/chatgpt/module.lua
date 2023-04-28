@@ -6,7 +6,7 @@ local Popup = require("nui.popup")
 
 local ChatInput = require("chatgpt.input")
 local Chat = require("chatgpt.chat")
-local Api = require("chatgpt.api")
+local Api = require("chatgpt.api-local")
 local Config = require("chatgpt.config")
 local Prompts = require("chatgpt.prompts")
 local Edits = require("chatgpt.code_edits")
