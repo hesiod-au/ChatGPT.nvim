@@ -12,7 +12,6 @@ Chat.__index = Chat
 QUESTION, ANSWER, SYSTEM = 1, 2, 3
 
 function Chat:new(bufnr, winid, on_loading)
-  Api.reset_conversation()
   self = setmetatable({}, Chat)
 
   self.session = Session.latest()
@@ -55,6 +54,7 @@ function Chat:welcome()
 end
 
 function Chat:new_session()
+  Api.reset_conversation()
   vim.api.nvim_buf_clear_namespace(self.bufnr, Config.namespace_id, 0, -1)
 
   self.session = Session:new()
