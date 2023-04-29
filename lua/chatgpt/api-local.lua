@@ -38,8 +38,8 @@ function Api.make_call(params, cb)
         message = instruction .. "On the following code: " .. input
     end
   end
-  message = string.gsub(message, '"','\\"')
-  message = string.gsub(message, "'","\\'")
+  message = string.gsub(message, '\"','\\"')
+  message = string.gsub(message, "\'","\\'")
   message = string.gsub(message, "\n","\\n")
 
   id = params.id
